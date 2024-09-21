@@ -1,13 +1,17 @@
-OBJ_FILES = main.o msg.o
+SRC = main.c msg.c
+# OBJ_FILES = $(SRC:%.c=%.o)
+OBJ_FILES = $(patsubst %.c, %.o, $(SRC))
+
+$(info $(SRC) $(OBJ_FILES))
 
 main: $(OBJ_FILES)
-	gcc $^ -o main
+	gcc $^ -o $@
 
 %.o: %.c
 	gcc -c $^
 
 run: main
-	./main
+	./$<
 
 clean:
-	rm main $(OBJ_FILES)
+	rm -f main $(OBJ_FILES)
