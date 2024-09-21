@@ -4,14 +4,14 @@ OBJ_FILES = $(patsubst %.c, %.o, $(SRC))
 
 $(info $(SRC) $(OBJ_FILES))
 
+all: main
+	./$<
+
 main: $(OBJ_FILES)
 	gcc $^ -o $@
 
 %.o: %.c
-	gcc -c $^
-
-run: main
-	./$<
+	gcc -c $^ -o $@
 
 clean:
 	rm -f main $(OBJ_FILES)
