@@ -1,8 +1,10 @@
-a.out: main.c
-	gcc main.c
+C_FILES = main.c msg.c
 
-c:
-	rm a.out
+main: $(C_FILES)
+	gcc $(C_FILES) -o main
 
-run: a.out
-	./a.out
+run: main
+	./main
+
+clean:
+	rm main main.o
