@@ -1,4 +1,4 @@
-SRC = main.c msg.c
+SRC = $(shell find -iname "*.c")
 # OBJ_FILES = $(SRC:%.c=%.o)
 OBJ_FILES = $(patsubst %.c, %.o, $(SRC))
 
