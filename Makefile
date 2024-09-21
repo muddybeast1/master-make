@@ -7,10 +7,10 @@ run: all
 	@./main
 
 main: $(OBJ_FILES)
-	gcc $^ -o $@
+	$(GCC) $^ -o $@
 
 %.o: %.c
-	gcc $(INCLUDES) -c $^ -o $@
+	$(GCC) $(INCLUDES) -c $^ -o $@
 
 clean:
 	rm -f main $(OBJ_FILES)
