@@ -1,3 +1,8 @@
-b.txt:a.txt
-	# echo a.txt > b.txt
-	cat a.txt
+a.out: main.c
+	gcc main.c
+
+c:
+	rm a.out
+
+run: a.out
+	./a.out
