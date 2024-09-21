@@ -1,10 +1,13 @@
-C_FILES = main.c msg.c
+OBJ_FILES = main.o msg.o
 
-main: $(C_FILES)
-	gcc $(C_FILES) -o main
+main: $(OBJ_FILES)
+	gcc $^ -o main
+
+%.o: %.c
+	gcc -c $^
 
 run: main
 	./main
 
 clean:
-	rm main main.o
+	rm main $(OBJ_FILES)
