@@ -1,9 +1,3 @@
-xyz:
-	ls
-	touch a.txt
-	echo "Hello, world" > a.txt
-	ls
+b.txt:a.txt
+	# echo a.txt > b.txt
 	cat a.txt
-
-abc:
-	echo "This is abc target"
